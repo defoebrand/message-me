@@ -6,7 +6,6 @@ class MessagesController < ApplicationController
     if message.save
       ActionCable.server.broadcast 'chatroom_channel',
                                    msg: render_message(message)
-      render
     end
   end
 
